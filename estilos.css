@@ -1,0 +1,300 @@
+/* estilos.css */
+
+/* Estilos gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffe6f2; /* Fundo rosa claro */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Elementos decorativos */
+.decoracao-topo, .decoracao-rodape {
+    width: 100%;
+    height: 150px;
+    background-image: url('imagens/decoracao.svg'); /* Substitua pelo caminho da sua imagem decorativa */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Container principal */
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+/* Efeito de fade-in */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Efeito de slide-in */
+.slide-in {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Mensagem de feedback */
+.mensagem-feedback {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff80bf; /* Rosa médio */
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.mensagem-feedback .fechar-mensagem {
+    margin-left: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilos do perfil */
+.perfil {
+    background-color: #fff; /* Fundo branco para contraste */
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.perfil:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Foto bola */
+    object-fit: cover;
+    border: 5px solid #ff80bf; /* Borda rosa em volta da foto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.perfil img:hover {
+    transform: scale(1.05);
+}
+
+/* Efeito de sobreposição na imagem de perfil */
+.foto-label {
+    position: relative;
+    display: inline-block;
+}
+
+.foto-label .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column; /* Alinhar ícone e texto verticalmente */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+    padding: 10px;
+}
+
+.foto-label:hover .overlay {
+    opacity: 1;
+}
+
+.foto-label .overlay i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.foto-label .overlay p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Estilos do formulário de dados do usuário */
+.dados-usuario {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.dados-usuario p {
+    margin: 10px 0;
+}
+
+.dados-usuario input[type="email"],
+.dados-usuario input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dados-usuario input[type="submit"] {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff80bf; /* Rosa médio */
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dados-usuario input[type="submit"]:hover {
+    background-color: #ff4da6; /* Tom mais escuro ao passar o mouse */
+}
+
+/* Botão de logout */
+.logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff80bf; /* Rosa médio */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.logout-btn:hover {
+    background-color: #ff4da6; /* Tom mais escuro passar o mouse */
+    transform: translateY(-3px);
+}
+
+/* Seções de consultas */
+.consultas-pendentes, .historico-consultas {
+    background-color: #fff; 
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.consultas-pendentes:hover, .historico-consultas:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.consultas-pendentes h3, .historico-consultas h3 {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+    color: #a64d79; /* Tom mais escuro de rosa */
+    transition: color 0.3s;
+}
+
+.consultas-pendentes h3:hover, .historico-consultas h3:hover {
+    color: #ff4da6;
+}
+
+.consultas-pendentes h3::after, .historico-consultas h3::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 24px;
+    line-height: 20px;
+    transition: transform 0.3s;
+}
+
+.consultas-pendentes.active h3::after, .historico-consultas.active h3::after {
+    content: '-';
+}
+
+.consultas-pendentes ul, .historico-consultas ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+    display: none; /* Inicia oculto */
+}
+
+.consultas-pendentes li, .historico-consultas li {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.consultas-pendentes li:last-child, .historico-consultas li:last-child {
+    border-bottom: none;
+}
+
+.consultas-pendentes p, .historico-consultas p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #a64d79;
+    border-top: 1px solid #eee;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .logout-btn {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .perfil img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .foto-label .overlay {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Estilo para campos editáveis */
+.campo-editavel {
+    cursor: pointer;
+    color: #007BFF; 
+    transition: color 0.3s;
+}
+
+.campo-editavel:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
